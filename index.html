@@ -7,11 +7,13 @@
 <body>
     <img id="loadingscreen" src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/loadingscreen.gif" alt="Image description" style="width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: -1;">
     <script>
+        window.addEventListener("load", function(){
         function LoadingScreenHide(){
 
             document.getElementById("loadingscreen").hidden=true
         }
         setTimeout(LoadingScreenHide, 4000);
+    })
     </script>
 </body>
 </html>
