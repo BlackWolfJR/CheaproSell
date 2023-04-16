@@ -1,20 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> CheaproSell, Buy cheap and easy!</title>
-    <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/ballscss.css"></link>
+    <title>CheaproSell, Buy cheap and easy!</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-color: rgb(1, 0, 26);
+            height: 100vh;
+        }
+        .c1{
+            background-color: rgb(216, 137, 18);
+            border-radius: 2px;
+            width:100%;
+            height: 14.8%;
+            position:fixed;
+        }
+        .logo{
+
+            position:fixed;
+            left:-16vh;
+            top:-4.4vh;
+        }
+        .Products{
+
+            padding:10px;
+            color:aliceblue;
+            position:fixed;
+            border-radius: 2vh;
+            top:0.4vh;
+            left:18vh;
+            transition:0.4s;
+        }
+        .Products:hover{
+
+            border: solid aliceblue 1px;
+            background-color: aliceblue;
+            color: black;
+        }
+        .ContactUs{
+
+            padding:10px;
+            border-radius: 2vh;
+            color:aliceblue;
+            position:fixed;
+            top:0.4vh;
+            left:34vh;
+        }
+        .ContactUs:hover{
+
+            border: solid aliceblue 1px;
+            background-color: aliceblue;
+            color: black;
+        }
+    </style>
 </head>
 <body>
-    <img id="loadingscreen" style="width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: -1;">
-    <script>
-        function LoadingScreenHide(){
-
-            document.getElementById("loadingscreen").hidden=true
-        }
-        window.addEventListener("load", function(){
-        document.getElementById("loadingscreen").src = "https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/loadingscreen.gif"
-        setTimeout(LoadingScreenHide, 4000);
-        })
-    </script>
+    <div class="c1">
+        <img class="logo" src="bolas123.png" alt="Failed to Display Logo"></img>
+        <h3 class="Products">Products</h3>
+        <h3 class="ContactUs">Contact Us</h3>
+        
+    </div> 
 </body>
 </html>
