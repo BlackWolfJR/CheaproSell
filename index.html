@@ -7,60 +7,84 @@
             margin: 0px;
             padding: 0px;
             background-color: rgb(1, 0, 26);
-            height: 100vh;
         }
         .c1{
-            background-color: rgb(216, 137, 18);
-            border-radius: 2px;
+            background-color: rgb(50, 47, 255);
             width:100%;
-            height: 14.8%;
+            height: 92px;
             position:fixed;
         }
         .logo{
-
+    
+            margin:3px 12px;
             position:fixed;
-            left:-16vh;
-            top:-4.4vh;
         }
         .Products{
 
-            padding:10px;
+            font-family:Bold;
+            font-size: 21px;
             color:aliceblue;
+            background-color: rgb(50, 47, 255);
+            border:0px;
+            padding:5px;
+            margin:24px 110px;
             position:fixed;
-            border-radius: 2vh;
-            top:0.4vh;
-            left:18vh;
+            border-radius: 8px;
             transition:0.4s;
         }
         .Products:hover{
 
             border: solid aliceblue 1px;
             background-color: aliceblue;
-            color: black;
+            color:black;
+        }
+        .Products:hover .PHZ{
+
+            border-top: 1px solid black;
+        }
+        .PHZ{
+
+            color:aliceblue;
+            position:relative;
+            margin:-2px 0px;
+
         }
         .ContactUs{
 
-            padding:10px;
-            border-radius: 2vh;
+            font-family:Bold;
+            font-size: 21px;
             color:aliceblue;
+            background-color: rgb(50, 47, 255);
+            border:0px;
+            padding:5px;
+            margin:24px 220px;
             position:fixed;
-            top:0.4vh;
-            left:34vh;
+            border-radius: 8px;
+            transition:0.4s;
         }
         .ContactUs:hover{
 
             border: solid aliceblue 1px;
             background-color: aliceblue;
-            color: black;
+            color:black;
         }
+        .ContactUs:hover .CHZ{
+
+            border-top: 1px solid black;
+        }   
+        .CHZ{
+
+            color:aliceblue;
+            position:relative;
+            margin:-2px 0px;
+        }    
     </style>
 </head>
 <body>
     <div class="c1">
-        <img class="logo" src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/bolas123.png" alt="Failed to Display Logo"></img>
-        <h3 class="Products">Products</h3>
-        <h3 class="ContactUs">Contact Us</h3>
-        
+        <img class="logo" src="bolas123.png" alt="Failed to Display Logo"></img>
+        <button class="Products">Products<hr class="PHZ"></button>
+        <button class="ContactUs">Contact Us<hr class="CHZ"></button>
     </div> 
 </body>
 </html>
