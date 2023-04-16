@@ -58,7 +58,7 @@
             background-color: rgb(50, 47, 255);
             border:0px;
             padding:5px;
-            margin:24px 220px;
+            margin:24px 330px;
             position:fixed;
             border-radius: 8px;
             transition:0.4s;
@@ -78,7 +78,49 @@
             color:aliceblue;
             position:relative;
             margin:-2px 0px;
-        }   
+        }
+        .AboutUs{
+
+            font-family:Bold;
+            font-size: 21px;
+            color:aliceblue;
+            background-color: rgb(50, 47, 255);
+            border:0px;
+            padding:5px;
+            margin:24px 220px;
+            position:fixed;
+            border-radius: 8px;
+            transition:0.4s;
+        }
+        .AboutUs:hover{
+
+            border: solid aliceblue 1px;
+            background-color: aliceblue;
+            color:black;
+        }
+        .AboutUs:hover .AB{
+
+            border-top: 1px solid black;
+        }
+        .AB{
+
+            color:aliceblue;
+            position:relative;
+            margin:-2px 0px;
+        }
+        .SearchBar{
+            font-family:Bold;
+            font-size: 21px;
+            color:rgb(0, 0, 0);
+            background-color: rgb(50, 47, 255);
+            border:0px;
+            padding:5px;
+            margin:24px 480px;
+            position:fixed;
+            transition:0.4s;
+            border:1px solid aliceblue;
+            border-radius: 8px;
+        } 
         .MostPopularProducts{
 
             position:absolute;
@@ -103,7 +145,9 @@
     <div class="c1">
         <img class="logo" src="bolas123.png" alt="Failed to Display Logo"></img>
         <button class="Products">Products<hr class="PHZ"></button>
+        <button class="AboutUs">About Us<hr class="AB"></button>
         <button class="ContactUs">Contact Us<hr class="CHZ"></button>
+        <input class="SearchBar" type="text" placeholder="Search..">
         <h1 class="MostPopularProducts">Most Popular Products</h1>
         <div class="Products1">
             
