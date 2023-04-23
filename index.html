@@ -9,7 +9,7 @@
             padding: 0px;
             background-color: aliceblue;
         }
-        .c1{
+        #c1{
             background-color: gray;
             border-radius: 0 0 3px 3px;
             width:100%;
@@ -17,12 +17,12 @@
             position:fixed;
             z-index: 1;
         }
-        .logo{
+        #logo{
     
             margin:3px 12px;
             position:fixed;
         }
-        .Products{
+        #Products{
 
             background-color: gray;
             font-family:Bold;
@@ -36,13 +36,13 @@
             text-shadow: 0 0 5px black;
             transition:0.4s;
         }
-        .Products:hover{
+        #Products:hover{
 
             background-color: aliceblue;
             color:black;
             text-shadow: 0 0 5px black;
         }
-        .ContactUs{
+        #ContactUs{
 
             background-color: gray;
             font-family:Bold;
@@ -56,13 +56,13 @@
             text-shadow: 0 0 5px black;
             transition:0.4s;
         }
-        .ContactUs:hover{
+        #ContactUs:hover{
 
             background-color: aliceblue;
             color:black;
             text-shadow: 0 0 5px black;
         } 
-        .AboutUs{
+        #AboutUs{
 
             background-color: gray;
             font-family:Bold;
@@ -76,13 +76,13 @@
             text-shadow: 0 0 5px black;
             transition:0.4s;
         }
-        .AboutUs:hover{
+        #AboutUs:hover{
 
             background-color: aliceblue;
             color:black;
             text-shadow: 0 0 5px black;
         }
-        .SearchBar{
+        #SearchBar{
             font-family:Bold;
             font-size: 21px;
             color:black;
@@ -94,7 +94,7 @@
             transition:0.4s;
             border-radius: 8px;
         } 
-        .MostPopularProducts{
+        #MostPopularProducts{
 
             background-color: gray;
             border: 5px solid gray;
@@ -107,7 +107,7 @@
             color:aliceblue;
             text-shadow: 0 0 10px black;
         } 
-        .Cart{
+        #Cart{
 
             border:none;
             border-radius: 10px;
@@ -116,12 +116,12 @@
             position:fixed;
             transition: 1s background-color;
         }
-        .Cart:hover{
+        #Cart:hover{
 
             background-color: aliceblue;
             border: solid aliceblue 2px;
         }
-        .AMostPopularProducts{
+        #AMostPopularProducts{
 
             position: absolute;
             margin:170px 20px;
@@ -130,7 +130,7 @@
             border:1px solid black;
             border-radius: 10px;
         }
-        #p1{
+        .p1{
 
             height:275px;
             margin:10px 10px;
@@ -165,36 +165,28 @@
             text-shadow: 0 0 10px black;
         }
     </style>
-    <script>
-        var productsbutton = document.getElementsByClassName("Products");
-        productsbutton.addEventListener("click", function(){
-
-            window.location.href = "https://blackwolfjr.github.io/CheaproSell/";
-        });
-    </script>
 </head>
 <body>
-    <div class="c1">
-        <img class="logo" src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/bolas123.png" alt="Failed to Display Logo"></img>
-        <button class="Products">Products<hr class="PHZ" style="height:1.4px;background-color:black;color:aliceblue;margin:-2px 0px;"></button>
-        <button class="AboutUs">About Us<hr class="AB" style="height:1.4px;background-color:black;color:aliceblue;margin:-2px 0px;"></button>
-        <button class="ContactUs">Contact Us<hr class="CHZ" style="height:1.4px;background-color:black;color:aliceblue;margin:-2px 0px;"></button>
-        <input class="SearchBar" type="text" placeholder="Search..">
-        <button class="Cart"><img src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/1111.png"></img></button>
+    <div id="c1">
+        <img id="logo" src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/bolas123.png" alt="Failed to Display Logo"></img>
+        <a id="Products" href="https://blackwolfjr.github.io/home/">Products</a>
+        <a id="AboutUs" href="https://blackwolfjr.github.io/AboutUs/">About Us</a>
+        <a id="ContactUs" href="https://blackwolfjr.github.io/ContactUs/">Contact Us</a>
+        <input id="SearchBar" type="text" placeholder="Search for product..">
+        <button id="Cart"><img src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/1111.png"></img></button>
     </div>
     <div>
-        <h1 class="MostPopularProducts">Most Popular Products</h1>
-        <div class="AMostPopularProducts">
-        
-            <div id="p1"><img class="p1" src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/1.png"></img>
+        <h1 id="MostPopularProducts">Most Popular Products</h1>
+        <div id="AMostPopularProducts">
+            <div class="p1"><img src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/1.png"></img>
                 <p class="p1-">Electric Nail Clipper</p>
                 <button class="p1--">View</button>
             </div>
-            <div id="p1"><img class="p1" src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/51rl6KyZuWL._AC_SX569_.jpg"></img>
+            <div class="p1"><img src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/51rl6KyZuWL._AC_SX569_.jpg"></img>
                 <p class="p1-">Hair Clipper</p>
                 <button class="p1--">View</button>
             </div>
-            <div id="p1"><img class="p1" src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/pendrive.jpg"></img>
+            <div class="p1"><img src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/pendrive.jpg"></img>
                 <p class="p1-">Exclusive FS Scripts</p>
                 <button class="p1--">View</button>
             </div> 
