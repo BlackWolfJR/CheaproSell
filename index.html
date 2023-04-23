@@ -4,6 +4,7 @@
     <title>CheaproSell, Buy cheap and easy!</title>
     <style>
         body {
+            height:400vh;
             margin: 0px;
             padding: 0px;
             background-color: aliceblue;
@@ -14,6 +15,7 @@
             width:100%;
             height: 93px;
             position:fixed;
+            z-index: 1;
         }
         .logo{
     
@@ -121,6 +123,7 @@
         }
         .AMostPopularProducts{
 
+            position: absolute;
             margin:170px 20px;
             width: 96%;
             height:320px;
@@ -153,47 +156,22 @@
             text-align: center;
             margin:10px 0px;
             border-radius: 8px;
-            transition:0.4s text-shadow;
+            transition:0.4s text-shadow, 0.6s background-color;
         }
         .p1--:hover{
 
+            background-color:rgb(95, 95, 95);
             color: white;
-            text-shadow: 0 0 10px white;
-        }
-        #p2{
-
-            height:275px;
-            margin:10px 10px;
-            display:inline-block;
-        }
-        .p2-{
-
-            font-family:Bold;
-            font-size: 16px;
-            color: black;
-            text-align: center;
-            margin:-4px 0px;
-            letter-spacing:1px;
-        }
-        .p2--{
-
-            width:100%;
-            font-family:Bold;
-            font-size: 21px;
-            background-color: rgb(1, 0, 26);
-            color: aliceblue;
-            border:1px solid black;
-            text-align: center;
-            margin:10px 0px;
-            border-radius: 8px;
-            transition:0.4s text-shadow;
-        }
-        .p2--:hover{
-
-            color: white;
-            text-shadow: 0 0 10px white;
+            text-shadow: 0 0 10px black;
         }
     </style>
+    <script>
+        var productsbutton = document.getElementsByClassName("Products");
+        productsbutton.addEventListener("click", function(){
+
+            window.location.href = "https://blackwolfjr.github.io/CheaproSell/";
+        });
+    </script>
 </head>
 <body>
     <div class="c1">
@@ -203,16 +181,24 @@
         <button class="ContactUs">Contact Us<hr class="CHZ" style="height:1.4px;background-color:black;color:aliceblue;margin:-2px 0px;"></button>
         <input class="SearchBar" type="text" placeholder="Search..">
         <button class="Cart"><img src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/1111.png"></img></button>
+    </div>
+    <div>
         <h1 class="MostPopularProducts">Most Popular Products</h1>
         <div class="AMostPopularProducts">
         
             <div id="p1"><img class="p1" src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/1.png"></img>
-                <p class="p1-">Corta Unhas Elétrico</p>
-                <button class="p1--">BUY</button>
+                <p class="p1-">Electric Nail Clipper</p>
+                <button class="p1--">View</button>
             </div>
-            <div id="p2"><img class="p2" src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/51rl6KyZuWL._AC_SX569_.jpg"></img>
-                <p class="p2-">Maquina de cortar o cabelo</p>
-                <button class="p2--">BUY</button>
+            <div id="p1"><img class="p1" src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/51rl6KyZuWL._AC_SX569_.jpg"></img>
+                <p class="p1-">Hair Clipper</p>
+                <button class="p1--">View</button>
+            </div>
+            <div id="p1"><img class="p1" src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/pendrive.jpg"></img>
+                <p class="p1-">Exclusive FS Scripts</p>
+                <button class="p1--">View</button>
             </div> 
+        </div>
+    </div>
 </body>
 </html>
