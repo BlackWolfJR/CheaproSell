@@ -2,11 +2,7 @@
 <html>
 <head>
     <title>CheaproSell, Buy cheap and easy!</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        .checked {
-            color: orange;
-        }
         body {
             height:300vh;
             margin: 0px;
@@ -97,6 +93,21 @@
             transition:0.4s;
             border-radius: 8px;
         }
+        #MostPopularProducts{
+
+
+            background-color: rgb(1,0,26);
+            border: 5px solid rgb(1,0,26);
+            box-shadow: 0px 1px 3px black;
+            border-radius: 10px;
+            width: 95.3%;
+            position:absolute;
+            margin:125px 20px;
+            font-family:Bold;
+            font-size: 21px;
+            color:white;
+            text-shadow: 0 0 5px black;
+        } 
         #SignIn{
 
             font-family:Bold;
@@ -151,259 +162,70 @@
             text-align: center;
             position:fixed;
         }
-        #u1{
-
-            margin:137px 100px;
-            width: 80%;
-            position: absolute;
-        }
-        #product{
-
-            box-shadow:0 0 2px black;
-        }
-        #productinfo{
+        #AMostPopularProducts{
 
             position: absolute;
-            width: 45%;
-            margin: 0 470px;
-            top:0px;
+            margin:170px 20px;
+            width: 96%;
+            height:320px;
+            overflow-x: scroll;
         }
-        #productname{
-            
-            display: block;
-            line-height: 1.875rem;
-            font-size: 22px;
-            color:rgb(1,0,26);
-            letter-spacing: 0.2px;
-            font-weight: 550;
-            font-family: sans-serif;
-            max-height:230px;
-            overflow-y: hidden;
+        #AMostPopularProducts::-webkit-scrollbar {
+            width: 5px;
+            height:0;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 1px black;
         }
-        #price{
-
-            display:block;
-            color:rgb(255, 0, 0);
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-size: 30px;
+        #AMostPopularProducts::-webkit-scrollbar-thumb {
+            background-color: rgb(1,0,26);
+            border-radius: 10px;
         }
-        #AddToCart{
+        .p1{
 
+            height:275px;
+            margin:10px 10px;
+            display:inline-block;
+            box-shadow: 0px 0px 2px black;
+        }
+        .p1-{
 
-            margin-top: 5px;
-            color: rgb(1,0,26);
-            padding:2px 0;
-            font-size: 15px;
+            font-family:Bold;
+            font-size: 17px;
+            color: black;
+            text-align: center;
+            margin:-4px 0px;
+            letter-spacing:1px;
+        }
+        .p1--{
+
             width:100%;
             font-family:Bold;
             font-size: 21px;
             background-color: rgb(1, 0, 26);
+            box-shadow: 0px 1px 2px black;
             color: white;
             border:1px solid black;
-            box-shadow: 0px 1px 2px black;
             text-align: center;
+            margin:10px 0px;
             border-radius: 8px;
             transition:0.4s text-shadow, 0.6s box-shadow;
         }
-        #AddToCart:hover{
+        .p1--:hover{
 
             color: white;
             text-shadow: 0 0 10px white;
             box-shadow: 0 0 15px rgb(1, 0, 26);
         }
-        #Buy{
+        .balls{
 
-            margin-top:6px;
-            color: rgb(1,0,26);
-            padding:2px 0;
-            font-size: 15px;
-            width:100%;
-            font-family:Bold;
-            font-size: 21px;
-            background-color: rgb(1, 0, 26);
-            color: white;
-            border:1px solid black;
-            box-shadow: 0px 1px 2px black;
-            text-align: center;
-            border-radius: 8px;
-            transition:0.4s text-shadow, 0.6s box-shadow;
-        }
-        #Buy:hover{
-
-            color: white;
-            text-shadow: 0 0 10px white;
-            box-shadow: 0 0 15px rgb(1, 0, 26);
-        }
-        #container{
-
-            position: absolute;
-            width:65px;
-            margin:137px 17px;
-            box-shadow:0 0 5px black;
-            transition: 0.5s;
-        }
-        #container:hover{
-
-            box-shadow:0 0 10px black;
-        }
-        #img1:hover{
-
-            border:1px solid rgb(1,0,26);
-        }
-        #img2:hover{
-
-            border:1px solid rgb(1,0,26);
-        }
-        #img3:hover{
-
-            border:1px solid rgb(1,0,26);
-        }  
-        #img4:hover{
-
-            border:1px solid rgb(1,0,26);
-        }  
-        #img5:hover{
-
-            border:1px solid rgb(1,0,26);
-        }  
-        #img6:hover{
-
-            border:1px solid rgb(1,0,26);
-        }  
-        #img7:hover{
-
-            border:1px solid rgb(1,0,26);
-        }  
-        #img8:hover{
-
-            border:1px solid rgb(1,0,26);
-        }
-        #u2{
-
-            width: 80%;
-            position: absolute;
-            margin: 590px 100px;
+            box-shadow: 0px 0 5px black;width:95%;height:1px;background-color:rgb(1,0,26);border:1px solid rgb(1,0,26);position: absolute; margin:500px 30px;
         }
     </style>
     <script>
         window.addEventListener("load", function(){
-            if (document.cookie.search("NumberOfProducts=")==-1){
-                return;
-            }
-            const NumberOfProductsInCart = (document.cookie.match(/NumberOfProducts=[0-9a-fA-F]+/).toString()).split("=")[1].toString();
-            let found;
-            for (let i = 1; i <= 25; i++) {
-                sha256("numofproductsis" + i).then(hash => {
-                    if (hash.toString()==NumberOfProductsInCart.toString()) {
-                        let found = true;
-                        let num = i;
-                    }
-                })
-            }
-            if (found==true){
-                document.getElementById("NumberOfProductsInCart").innerHTML = i;
-            }
+            document.getElementById("NumberOfProductsInCart").innerHTML = Number((((document.cookie.match(/NumberOfProducts=\d+/)).toString()).split("=")[1]));
         })
-        function sha256(input) { //// hash func
-                const encoder = new TextEncoder();  
-                const data = encoder.encode(input);
-                return crypto.subtle.digest('SHA-256', data).then(buffer => {
-                    const hashArray = Array.from(new Uint8Array(buffer));
-                    const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
-                    return hashHex;
-                });
-        } ////
-        function changeimage1(){
-
-            var imageproduct = document.getElementById("product");
-            imageproduct.style="width:452px;height:435px;";
-            imageproduct.src = "big.png";
-        }
-        function changeimage2(){
-
-            var imageproduct = document.getElementById("product");
-            imageproduct.style="width:452px;height:435px;";
-            imageproduct.src = "2.jpg";
-        }
-        function changeimage3(){
-
-            var imageproduct = document.getElementById("product");
-            imageproduct.style="width:452px;height:435px;";
-            imageproduct.src = "3.jpg";
-        }
-        function changeimage4(){
-
-            var imageproduct = document.getElementById("product");
-            imageproduct.style="width:452px;height:435px;";
-            imageproduct.src = "4.jpg";
-        }
-        function changeimage5(){
-
-            var imageproduct = document.getElementById("product");
-            imageproduct.style="width:452px;height:435px;";
-            imageproduct.src = "5.jpg";
-        }
-        function changeimage6(){
-
-            var imageproduct = document.getElementById("product");
-            imageproduct.style="width:452px;height:435px;";
-            imageproduct.src = "6.jpg";
-        }
-        function changeimage7(){
-
-            var imageproduct = document.getElementById("product");
-            imageproduct.style="width:452px;height:435px;";
-            imageproduct.src = "7.jpg";
-        }
-        function changeimage8(){
-
-            var imageproduct = document.getElementById("product");
-            imageproduct.style="width:452px;height:435px;";
-            imageproduct.src = "8.jpg";
-        }
-        function AddToCart(){
-
-            if (document.cookie.search("NumberOfProducts=")==-1){   
-
-                sha256("numofproductsis1").then(hash => {
-                    const cookieValue = `NumberOfProducts=${hash}; expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
-                    document.cookie = cookieValue;
-                    document.getElementById("NumberOfProductsInCart").innerHTML = "1";
-                    document.getElementById("productincart").style.display = "inline-block";
-                });
-                return;
-            }
-            const NumberOfProductsInCart = (document.cookie.match(/NumberOfProducts=[0-9a-fA-F]+/).toString()).split("=")[1].toString();
-            var NumberOfProductsInCart1 = document.getElementById("NumberOfProductsInCart");
-            let found;
-            for (let i = 1; i <= 25; i++) {
-                sha256("numofproductsis" + i).then(hash => {
-                    if (hash.toString()==NumberOfProductsInCart.toString()) {
-                        let found = true;
-                        let num = i;
-                        console.log("yes " + i);
-                    }
-                })
-            }
-            if (found!=true){
-                return;
-            }
-            if (i>=9){
-
-                NumberOfProductsInCart1.style="width: 21px;height: 21px;margin-top: 18px;right:37px;"
-            }
-            if (i>=25){
-
-                alert("No more than 25 products!")
-                return;
-            }
-            console.log("works"); 
-            document.getElementById("productincart").style.display = "inline-block";
-            sha256("numofproductsis" + i).then(hash => {
-                document.cookie = `NumberOfProducts=${hash};expires=Thu, 18 Dec 9999 12:00:00 UTC; path=/`;
-            });
-            NumberOfProductsInCart1.innerHTML = i+1;
-        }
         var cartOpen = false;
         function CartClick() {
             if (cartOpen) {
@@ -426,124 +248,36 @@
         <a id="SignIn" href="https://blackwolfjr.github.io/SignIn/">Sign In</a>
         <button onclick="CartClick()" id="Cart"><img src="https://raw.githubusercontent.com/BlackWolfJR/1/main/cart.png" style="width: 64px;height: 64px;"></img><div id="NumberOfProductsInCart">0</div></button>
     </div>
-    <div id="CartFrame" style="display: none;box-shadow: 0 0 15px rgb(1, 0, 26);position: fixed;right:0px;height: 100vh;width:275px;border-radius:10px;border:2px solid rgb(1, 0, 26);z-index: 1;background-color: white;margin-top:93px;"><div style="justify-content: center;background-image: linear-gradient(90deg,rgb(1,0,26), white);padding-top: 25px;box-shadow: 0 0 2px rgb(1, 0, 26);width: 100%;text-align: center;text-shadow: 0 0 5px black;">
-        <span style="position: relative;bottom: 12px;font-size: 25px;display: block;font-family:Bold;color:white;text-shadow: 0 0 5px black;">My Cart</span></div>
-        <div id="productincart" style="display:none;margin:5px;border:1px solid blue;width:95%;height:65px;"><img src="big.png" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img><span id="numofspecificproductincart" style="font-size: 32px;position: absolute;margin:14px 50px;box-shadow:0 0 1px black;">1</span><span style="font-size: 32px;position: absolute;margin:14px 100px;box-shadow:0 0 1px black;">+</span><span style="font-size: 32px;position: absolute;margin:10px 150px;box-shadow:0 0 1px black;">-</span></div>
-    </div>
-    <hr style="box-shadow:0 0 1px black;border:1px solid rgb(1,0,26);margin:115px 20px;height: 0;width: 97%;position: absolute;">
-    <div id="container">
-        <img onmouseover="changeimage1()" id="img1" src="big.png" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img>
-        <img onmouseover="changeimage2()" id="img2" src="2.jpg" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img>
-        <img onmouseover="changeimage3()" id="img3" src="3.jpg" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img>
-        <img onmouseover="changeimage4()" id="img4" src="4.jpg" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img>
-        <img onmouseover="changeimage5()" id="img5" src="5.jpg" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img>
-        <img onmouseover="changeimage6()" id="img5" src="6.jpg" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img>
-        <img onmouseover="changeimage7()" id="img5" src="7.jpg" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img>
-        <img onmouseover="changeimage8()" id="img5" src="8.jpg" style="width:65px;height:65px;box-shadow:0 0 1px black;"></img>
-    </div>
-    <div id="u1">
-        <img id="product" src="https://raw.githubusercontent.com/BlackWolfJR/1/main/big.png"></img>
-        <div id="productinfo">
-            <span id="productname">Electric Automatic Nail Clipper with Light & 2 Speeds,Fingernail Cutter and File 2 in 1 Design, Nail Scraps Storage,USB Rechargeable Safety Fingernail Trimmer for Baby, Kids, Seniors and Adult</span>
-            <hr><span id="InStock" style="color:green;font-size: 26px;">In Stock</span></hr>
-            <span style="margin-left: 20px" class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-            <p style="display: inline;margin-left: 5px;font-size: 20px;color:rgb(1,0,26)">3.1</p>
-            <p style="display: inline;margin-left: 30px;font-size: 20px;color:rgb(1,0,26)">124 Ratings</p>
-            <span id="price">$39.99</span>
-            <img src="https://raw.githubusercontent.com/BlackWolfJR/1/main/paypalimage.png">
-            <button onclick="AddToCart()" id="AddToCart">Add To Cart</button>
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="T5X7V358F7CEL">
-                <button id="Buy">Buy Now</button>
-            </form> 
-            <p style="margin:10px 0;font-size: 16px;color:rgb(6, 0, 190);">No Import Fees Deposit & Deliveries may take a few days</p>
+    <div id="CartFrame" style="display: none;box-shadow: 0 0 15px rgb(1, 0, 26);position: fixed;right:0px;height: 100vh;width:275px;border-radius:10px;border:2px solid rgb(1, 0, 26);z-index: 1;background-color: white;margin-top:93px;"><div style="justify-content: center;align-content: center;background-image: linear-gradient(90deg,rgb(1,0,26), white);padding-top: 25px;box-shadow: 0 0 2px rgb(1, 0, 26);width: 100%;display: flex;text-align: center;text-shadow: 0 0 5px black;"><span style="font-size: 25px;display: block;font-family:Bold;color:white;text-shadow: 0 0 5px black;">My Cart</span></div></div>
+    <div>
+        <h1 id="MostPopularProducts">Most Popular Products</h1>
+        <div id="AMostPopularProducts">
+            <div class="p1"><img src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/T6RF67yugiug7.jpg"></img>
+                <hr style="border: 1px solid rgba(0, 0, 0, 0.850);"><p class="p1-">Electric Nail Clipper</p></hr>
+                <a style="border:none;" href="https://blackwolfjr.github.io/1"><button class="p1--">View</button></a>
+            </div>
+            <div class="p1"><img src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/51rl6KyZuWL._AC_SX569_.jpg"></img>
+                <hr style="border: 1px solid rgba(0, 0, 0, 0.850);"><p class="p1-">Hair Clipper</p></hr>
+                <button class="p1--">View</button>
+            </div>
+            <div class="p1"><img src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/pendrive.jpg"></img>
+                <hr style="border: 1px solid rgba(0, 0, 0, 0.850);"><p class="p1-">Exclusive FS Scripts</p></hr>
+                <button class="p1--">View</button>
+            </div> 
+            <div class="p1"><img src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/71MP4OYp7YL._AC_SL1500_.jpg"></img>
+                <hr style="border: 1px solid rgba(0, 0, 0, 0.850);"><p class="p1-">Portable Mini Fridge</p></hr>
+                <button class="p1--">View</button>
+            </div> 
+            <div class="p1"><img src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/61yicfQV5kL._SL1500_.jpg"></img>
+                <hr style="border: 1px solid rgba(0, 0, 0, 0.850);"><p class="p1-">Hybrid Electric Trimmer</p></hr>
+                <button class="p1--">View</button>
+            </div> 
+            <div class="p1"><img src="https://raw.githubusercontent.com/BlackWolfJR/CheaproSell/main/61yicfQV5kL._SL1500_.jpg"></img>
+                <hr style="border: 1px solid rgba(0, 0, 0, 0.850);"><p class="p1-">Hybrid Electric Trimmer</p></hr>
+                <button class="p1--">View</button>
+            </div> 
         </div>
     </div>
-    <div id="u2">
-        <h1 style="margin:-5px 0;text-align:center;font-size: 22px;color:rgb(1,0,26);font-size: 22px;color:rgb(1,0,26);font-family: sans-serif;">About this Product</h1>
-        <hr style="margin:10px 0;"></hr>
-        <ul>
-            <li style="font-size: 18px;">[High Safety and Ergonomic Design] the blade is hidden behind a curved groove and the recessed cutter allows for perfect nail separation while ensuring safety , especially for babies and people with eye problems.[High Safety and Ergonomic Design] the blade is hidden behind a curved groove and the recessed cutter allows for perfect nail separation while ensuring safety , especially for babies and people with eye problems.</li>
-            <li style="margin-top:8px;font-size: 18px;">[LED auxiliary Lighting and Quiet Working] nail cutter design adds auxiliary lighting, high speed and silent motor designed specifically for nighttime nail cutting. This nail clipper is certainly an ideal gift for the elderly, children and many people with poor eyesight.</li>
-            <li style="margin-top:8px;font-size: 18px;">[2-Speed Models and Rechargeable Portable Design] Just one button, short press to switch the speed. High and low dual speed design is suitable for the elderly and children.with 600mAH high capacity battery, using Type-C cable (included in the package) only takes 2~3 hours to fill. It is convenient to take it on a trip or business trip.</li>
-            <li style="margin-top:8px;font-size: 18px;">[Nail Debris Storage and Easy Cleaning]Nail clippings from nail clipping are collected in the product's storage box. By pressing the upper part of the window, you can easily open and dump the nail clippings for quick and easy cleaning.</li>
-            <li style="margin-top:8px;font-size: 18px;">[What You Get] Package includes 1 x electric nail clipper, 1 x cleaning brush, 1 x C-type charging cable, 1 x instruction manual. Please feel free to contact us if you have any problems about the product.</li>
-        </ul>
-        <div style="width:100%;">
-            <div style="display: inline-block;width:300px;">
-                <img src="8.jpg" style="width:300px;height:300px;box-shadow:0 0 1px black;"></img>
-                <p style="text-align: center;">kkjoisfhieuwfhwfuijfewfw</p>
-            </div>
-            <div style="display: inline-block;width:300px;">
-                <img src="8.jpg" style="width:300px;height:300px;box-shadow:0 0 1px black;"></img>
-                <p style="text-align: center;">kkjoisfhieuwfhwfuijfewfw</p>
-            </div>
-        </div>
-        <h1 style="text-align:center;font-size: 22px;color:rgb(1,0,26);font-size: 22px;color:rgb(1,0,26);font-family: sans-serif;">Specifications</h1>
-        <hr style="margin:-10px 0;"></hr>
-        <div style="background-color: azure;position: absolute;width:50%;margin-top:20px;box-shadow: 0px 0 2px black;">
-            <div style="display:flex;width:100%;justify-content:center;box-shadow: 0px 1px 2px black;">
-                <p style="font-size: 19px;">Brand</p>
-            </div>
-            <div style="display: flex;width:100%;justify-content:center;box-shadow: 0px 1px 2px black;">
-                <p style="font-size: 19px;">Model</p>
-            </div>
-            <div style="display: flex;width:100%;justify-content:center;box-shadow: 0px 1px 2px black;">
-                <p style="font-size: 19px;">Magnetic cover</p>
-            </div>
-            <div style="display: flex;width:100%;justify-content:center;box-shadow: 0px 1px 2px black;">
-                <p style="font-size: 19px;">Light sensor</p>
-            </div>
-            <div style="display: flex;width:100%;justify-content:center;box-shadow: 0px 1px 2px black;">
-                <p style="font-size: 19px;">Fingerprint</p>
-            </div>
-            <div style="display: flex;width:100%;justify-content:center;box-shadow: 0px 1px 2px black;">
-                <p style="font-size: 19px;">LED soft light</p>
-            </div>
-            <div style="display: flex;width:100%;justify-content:center;box-shadow: 0px 1px 2px black;">
-                <p style="font-size: 19px;">Hanging hole</p>
-            </div>
-            <div style="display: flex;width:100%;justify-content:center;box-shadow: 0px 1px 2px black;">
-                <p style="font-size: 19px;">Size</p>
-            </div>
-            <div style="display: flex;width:100%;justify-content:center;box-shadow: 0px 1px 2px black;">
-                <p style="font-size: 19px;">Weight</p>
-            </div>
-        </div>
-        <div style="background-color: wheat;position: absolute;width:50%;margin-top:20px;box-shadow: 0px 1px 2px black;margin-left:50%">
-            <div style="display:flex;width:100%;justify-content:center;box-shadow: 0px 1px 2px black;">
-                <p style="font-size: 19px;">Vanyuei</p>
-            </div>
-            <div style="display: flex;width:100%;justify-content:center;box-shadow: 0px 1px 2px black;">
-                <p style="font-size: 19px;">SMPH-ZJDO3S</p>
-            </div>
-            <div style="display: flex;width:100%;justify-content:center;box-shadow: 0px 1px 2px black;">
-                <p style="font-size: 19px;">Yes</p>
-            </div>
-            <div style="display: flex;width:100%;justify-content:center;box-shadow: 0px 1px 2px black;">
-                <p style="font-size: 19px;">Yes</p>
-            </div>
-            <div style="display: flex;width:100%;justify-content:center;box-shadow: 0px 1px 2px black;">
-                <p style="font-size: 19px;">No</p>
-            </div>
-            <div style="display: flex;width:100%;justify-content:center;box-shadow: 0px 1px 2px black;">
-                <p style="font-size: 19px;">Yes</p>
-            </div>
-            <div style="display: flex;width:100%;justify-content:center;box-shadow: 0px 1px 2px black;">
-                <p style="font-size: 19px;">Yes</p>
-            </div>
-            <div style="display: flex;width:100%;justify-content:center;box-shadow: 0px 1px 2px black;">
-                <p style="font-size: 19px;">2.08*1.67*0.8 Inch</p>
-            </div>
-            <div style="display: flex;width:100%;justify-content:center;box-shadow: 0px 1px 2px black;">
-                <p style="font-size: 19px;">0.11 lb</p>
-            </div>
-        </div>
-    </div>
+    <div class="balls"></div>
 </body>
 </html>
