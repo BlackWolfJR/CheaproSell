@@ -284,8 +284,8 @@
                 }
             }
             const NumberOfProductsInCart = (document.cookie.match(/NumberOfProducts=[0-9a-fA-F]+/).toString()).split("=")[1].toString();
-            let found;
-            let num;
+            var found;
+            var num;
             promises.length = 0;
             for (let i = 1; i <= 25; i++) {
                 promises.push(
