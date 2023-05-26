@@ -11,7 +11,7 @@
         }
         #c1{
             display: flex;
-            background-image: linear-gradient(90deg,rgb(1,0,26) 40%, white);
+            background-color: rgb(1,0,26);
             box-shadow: 0px 1px 4px black;
             border-radius: 0 0 3px 3px;
             width:100%;
@@ -25,8 +25,8 @@
         }
         #Products{
 
-            font-family:Bold;
-            font-size: 21px;
+            font-family: "Poppins", "Inter", sans-serif;
+            font-size: 18px;
             color:white;
             border:0px;
             padding:5px;
@@ -44,8 +44,8 @@
         }
         #ContactUs{
 
-            font-family:Bold;
-            font-size: 21px;
+            font-family: "Poppins", "Inter", sans-serif;
+            font-size: 18px;
             color:white;
             border:0px;
             padding:5px;
@@ -63,8 +63,8 @@
         } 
         #AboutUs{
 
-            font-family:Bold;
-            font-size: 21px;
+            font-family: "Poppins", "Inter", sans-serif;
+            font-size: 18px;
             color:white;
             border:0px;
             padding:5px;
@@ -110,8 +110,8 @@
         } 
         #SignIn{
 
-            font-family:Bold;
-            font-size: 21px;
+            font-family: "Poppins", "Inter", sans-serif;
+            font-size: 18px;
             color:white;
             border:0px;
             padding:5px;
@@ -231,57 +231,35 @@
             if (document.cookie.search("https")!=-1){
                 const httpsincookies= (document.cookie.match(/https[^;]+/g));
                 const class1 = document.getElementsByClassName("productincart");
-                for (let p=0;p<httpsincookies.length;p++){
-
-                    for (let i=0;i<class1.length;i++){
-
-                        if (class1[i].getElementsByClassName("imageincart")[0].src!=""){
-                            const promises1 = [];
-                            let found;
-                            let num;
-                            let debounce = true;
-                            class1[i].getElementsByClassName("imageincart")[0].src = decodeURIComponent(httpsincookies[p]);
-                            for (let ii = 1; ii <= 25; ii++) {
-                                promises1.push(
-                                    sha256("numofproductsis" + ii).then(hash => {
+                let found;
+                async function runcheck(){
+                    console.log(httpsincookies.length);
+                    for (let p=0;p<httpsincookies.length;p++){
+                        for (let i=0;i<class1.length;i++){
+                            if (class1[i].getElementsByClassName("imageincart")[0].src==window.location.href){
+                                for (let ii = 1; ii <= 25; ii++) {
+                                    await sha256("numofproductsis" + ii).then(hash => {
                                         if (hash.toString()==(httpsincookies[p].toString()).split("=")[1].toString()) {
+                                            class1[i].getElementsByClassName("imageincart")[0].src = (decodeURIComponent(httpsincookies[p].toString().split("=")[0].toString())).toString();
+                                            class1[i].getElementsByClassName("numofspecificproductincart")[0].innerHTML = ii;
+                                            class1[i].style.display = "inline-block";
                                             found = true;
-                                            num = ii;
                                         }
                                     })
-                                )
-                            }
-                            Promise.all(promises1).then(() => {
-
+                                    if (found){
+                                        break;
+                                    }
+                                } 
                                 if (found){
-                                    class1[i].getElementsByClassName("imageincart")[0].src = ((decodeURIComponent(httpsincookies[p])).toString().split("=")[0]).toString();
-                                    class1[i].getElementsByClassName("numofspecificproductincart")[0].innerHTML = num;
-                                    class1[i].style.display = "inline-block";
-                                    promises1.length = 0;
-                                } else {
-
-                                    found = false;
+                                    break;
                                 }
-                            })
-                            let interval = setInterval(function(){
-                                if (found==true){
-
-                                    return true;
-                                } else if (found==false){
-
-                                    return false;
-                                }
-                            },100);
-                            if (interval){
-
-                                break;
                             }
-                            
+
                         }
 
                     }
-
                 }
+                runcheck();
             }
             const NumberOfProductsInCart = (document.cookie.match(/NumberOfProducts=[0-9a-fA-F]+/).toString()).split("=")[1].toString();
             var found;
